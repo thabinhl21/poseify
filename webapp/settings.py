@@ -26,14 +26,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
-ENGINE = os.getenv('ENGINE')
-NAME = os.getenv('NAME')
-DB_USERNAME = os.getenv('DB_USERNAME')
-PASSWORD = os.getenv('PASSWORD')
-HOST = os.getenv('HOST')
-PORT = os.getenv('PORT')
-SSLMODE = os.getenv('SSLMODE')
-OPTIONS = os.getenv('OPTIONS')
+# ENGINE = os.getenv('ENGINE')
+# NAME = os.getenv('NAME')
+# DB_USERNAME = os.getenv('DB_USERNAME')
+# PASSWORD = os.getenv('PASSWORD')
+# HOST = os.getenv('HOST')
+# PORT = os.getenv('PORT')
+# SSLMODE = os.getenv('SSLMODE')
+# OPTIONS = os.getenv('OPTIONS')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -88,22 +88,22 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
     'default': {
-        'ENGINE': ENGINE,
-        'NAME': NAME,
-        'USER': DB_USERNAME,
-        'PASSWORD': PASSWORD,
-        'HOST': HOST,
-        'PORT': PORT,
-        'OPTIONS': {
-            'sslmode': SSLMODE,
-            'options': OPTIONS,
-        },
-    },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+    # 'default': {
+    #     'ENGINE': ENGINE,
+    #     'NAME': NAME,
+    #     'USER': DB_USERNAME,
+    #     'PASSWORD': PASSWORD,
+    #     'HOST': HOST,
+    #     'PORT': PORT,
+    #     'OPTIONS': {
+    #         'sslmode': SSLMODE,
+    #         'options': OPTIONS,
+    #     },
+    # },
 }
 
 
@@ -153,3 +153,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# AUTH_USER_MODEL = 'pose.CustomUser'

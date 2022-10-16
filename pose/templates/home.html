@@ -17,7 +17,7 @@
         <a class="p-2 text-light" href="">Home</a>
           <a class="p-2 text-light" href="{% url 'upload' %}">Upload</a>
           <a class="p-2 text-light" href="{% url 'shoot' %}">Record</a>
-          <a class="p-2 text-light" href="{% url 'account' %}">My Account</a>
+          <a class="p-2 text-light" href="{% url 'gallery' %}">Gallery</a>
         </nav>
         <a class="btn btn-outline-light" href="{% url 'login' %}">Log in</a>
       </div>
@@ -28,10 +28,13 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <p class="lead p-2">You have come to the right page. Poseify will </p>
+              <!-- <p class="lead p-2">Online Education Simplified. Content Creation Automated. </p> -->
+              <h1 style="text-align: center"> Online Education Simplified. </h1>
+              <br>
+              <h1 style="text-align: center"> Content Creation Automated.</h1>
             </div>
             <div class="col-md-auto my-auto">
-              <img src="https://image.shutterstock.com/image-photo/collage-contemp-girl-dancing-posing-260nw-1460084540.jpg" height="300" alt="">
+              <!-- <img src="https://image.shutterstock.com/image-photo/collage-contemp-girl-dancing-posing-260nw-1460084540.jpg" height="300" alt=""> -->
             </div>
           </div>
         </div>
@@ -44,7 +47,12 @@
               Then, an output will be presented which depicts the pose in a detailed manner and the users can save the poses they like. Click below to get started!
           </p>
         <br>
-          <button id="fullbtn" type="button" class="btn btn-secondary btn-lg btn-block">Record</button>
+          <button id="recordButton" type="button" class="btn btn-secondary btn-lg btn-block">Record</button>
+          <script type="text/javascript">
+            document.getElementById("recordButton").onclick = function () {
+              location.href = "{% url 'shoot' %}";
+            }
+          </script>
         </div>
       </div>
       

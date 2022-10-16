@@ -16,7 +16,7 @@
           <a class="p-2 text-light" href="/">Home</a>
             <a class="p-2 text-light" href="{% url 'upload' %}">Upload</a>
             <a class="p-2 text-light" href="{% url 'shoot' %}">Record</a>
-            <a class="p-2 text-light" href="{% url 'account' %}">My Account</a>
+            <a class="p-2 text-light" href="{% url 'gallery' %}">Gallery</a>
           </nav>
           <a class="btn btn-outline-light" href="{% url 'signup' %}">Sign Up</a>
       </div>
@@ -27,13 +27,15 @@
         <div class="row">
           <div class="col-6">
             <div id="accountcard" class="card p-4 align-self-center">
-              <form method="POST" class="form-signin">
+              <form method="POST" class="form-signin", action="" enctype= "multipart/form-data">
+                {% csrf_token %}
                 <h1 class="mb-4 display-4 ">Log in to your account here!</h1>
                 <label for="inputName" class="sr-only">Username</label>
-                <input type="name" id="inputName" name="inputName" class="form-control" placeholder="Username" required="" autofocus="">
+                <input type="name" id="username" name="username" class="form-control" placeholder="Username" required="" autofocus="">
                 <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
                 <button id="fullbtn" class="btn btn-lg btn-primary btn-block mt-3" type="submit">Log in</button>
+                <!-- <button type="submit" class="button1">login</button> -->
               </form>
             </div>
           </div>
