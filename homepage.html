@@ -1,0 +1,72 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poseify</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="{{ url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" />
+</head>
+
+<body style="background-color:#FAFAFA">
+  <div class="p-3 px-md-4 mb-3 border-bottom shadow-sm" id="navbar">
+    <div class="container d-flex flex-column flex-md-row align-items-center">
+      <h5 class="my-0 mr-md-auto font-weight-normal text-light"><a class="text-light" href="/">Poseify</a></h5>
+      <nav class="my-2 my-md-0 mr-md-3">
+      <a class="p-2 text-light" href="/home">Home</a>
+        <a class="p-2 text-light" href="/upload">Upload</a>
+        <a class="p-2 text-light" href="/record">Record</a>
+        <a class="p-2 text-light" href="/myaccount">My Account</a>
+      </nav>
+      <a class="btn btn-outline-light" href="/login">Log in</a>
+    </div>
+  </div>
+
+  <main>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="lead p-2">You have come to the right page. Poseify will </p>
+          </div>
+          <div class="col-md-auto my-auto">
+            <img src="https://image.shutterstock.com/image-photo/collage-contemp-girl-dancing-posing-260nw-1460084540.jpg" height="300" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container p-4">
+      <h1 class="display-4">How it Works</h1>
+      <div class="intro">
+        <p class="lead">
+          Poseify helps detect poses, through the use of machine learning. Once the file is uploaded, the ML algorithm will take in the data. Then, an output will be presented which depicts the pose in a detailed manner and the users can save the poses they like. Click below to get started!
+        </p>
+      <br>
+        <button id="fullbtn" type="button" class="btn btn-secondary btn-lg btn-block">Upload</button>
+      </div>
+    </div>
+    
+    <div class="container p-4">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">Additional Features</h1>
+          <p class="lead">You can also live record your poses and have ML recognize them. </p>   
+          <br>
+        <button id="fullbtn" type="button" class="btn btn-secondary btn-lg btn-block">Record</button>
+        </div>
+        <div class="col-md-auto">
+          <img src="https://static.mywebsites360.com/f24fcb12b87740b295cc8d3b32c58483/i/e8c2b4e33e1c476eaa515d08bbf05730/1/4SoifmQp45JMgBnHp7ed2/8e3fd0_0898519bc93b4ef0aff86e1be74830d0_mv2.jpg" width="400" height="300" alt=""><br>
+        </div>
+      </div>
+    </div>
+    
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p class="float-right">
+        <a style="color: #EC3B83;" href="#">Back to top</a>
+      </p>
+      <p>&copy; 2022 Poseify. All Rights Reserved.</p>
+      <p>New to Bootstrap? <a style="color: #EC3B83;" href="">Visit the homepage</a> or read our <a style="color: #EC3B83;" href="">getting started guide</a>.</p>
+    </div>
+  </footer>
+</body>
