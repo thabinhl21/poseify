@@ -27,15 +27,28 @@
         <div class="row">
             <div class="col-6">
                 <div class="card p-4 align-self-center">
-                    <form method="POST" class="form-signin">
+                    <form method="POST" class="form-signin" action ="">
+                      {% csrf_token %}
                       <h1 class="mb-3 display-4">Create an account here!</h1>
                       <label for="inputName" class="sr-only">Username</label>
                       <input type="name" id="inputName" name="inputName" class="form-control" placeholder="Username" required="" autofocus="">
+                      <!-- {{ form.username }} -->
                       <label for="inputPassword" class="sr-only">Password</label>
                       <input type="password" id="inputPassword"  name="inputPassword" class="form-control" placeholder="Password" required="">
-                      <label for="inputEmail" class="sr-only">Phone Number</label>
-               <input type="phonenumber" id="inputNumber" class="form-control" placeholder="123-456-7890" required="" autofocus="">
-                      <button id="fullbtn" class="btn btn-lg btn-primary btn-block my-3" type="submit">Sign up</button>
+                      <!-- {{form.password}} -->
+                      <label for="inputEmail" class="sr-only">Email</label>
+                      <input type="email" id="inputNumber" class="form-control" placeholder="johndoe@gmail.com" required="" autofocus="">
+                      <!-- {{form.email}} -->
+                      <button id="fullbtn" class="btn btn-lg btn-primary btn-block my-3" input type="submit">Sign up</button>
+
+                      <!-- {{ form.username.label }}
+                      {{ form.username }}
+
+                      {{form.password.label}}
+                      {{form.password}}
+
+                      {{form.email.label}}
+                      {{form.email}} -->
                     </form>
                 </div>
             </div>
