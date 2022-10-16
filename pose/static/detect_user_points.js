@@ -48,6 +48,7 @@ function reviewPoses(){
     console.log(save_images);
 }
 
+
 function gotPoses(poses){
     //console.log(poses);
     if(poses.length > 0 && recording_flag){
@@ -130,6 +131,7 @@ function draw(){
 }
 function addImg(){
     final_images.push(curr_img);
+    saveCanvas("GIF_"+curr_img, "png");
 }
 function nextPose(){
     curr_img = Math.min(curr_img+1, save_images.length-1);
