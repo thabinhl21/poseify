@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # take environment variables from .env.
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +25,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5%0--2x^^$0=g23w=c4ayp*az*z&757fu8d$dksy%t&6dds*%$'
+SECRET_KEY = os.getenv('SECRET_KEY')
+ENGINE = os.getenv('ENGINE')
+NAME = os.getenv('NAME')
+DB_USERNAME = os.getenv('DB_USERNAME')
+PASSWORD = os.getenv('PASSWORD')
+HOST = os.getenv('HOST')
+PORT = os.getenv('PORT')
+SSLMODE = os.getenv('SSLMODE')
+OPTIONS = os.getenv('OPTIONS')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,10 +88,32 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        # 'ENGINE': ENGINE,
+        # 'NAME': NAME,
+        # 'USER': USER,
+        # 'PASSWORD': PASSWORD,
+        # 'HOST': HOST,
+        # 'PORT': PORT,
+        # 'OPTIONS': {
+        #     'sslmode': SSLMODE,
+        #     'options': OPTIONS,
+        # },
+        'ENGINE': ENGINE,
+        'NAME': NAME,
+        'USER': DB_USERNAME,
+        'PASSWORD': PASSWORD,
+        'HOST': HOST,
+        'PORT': PORT,
+        'OPTIONS': {
+            'sslmode': SSLMODE,
+            'options': OPTIONS,
+        },
+    },
 }
 
 
