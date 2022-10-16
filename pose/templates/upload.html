@@ -1,1 +1,62 @@
-<h1>Upload</h1>
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poseify</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  
+  <body>
+    <div class="p-3 px-md-4 mb-3 border-bottom shadow-sm" id="navbar">
+      <div class="container d-flex flex-column flex-md-row align-items-center">
+        <h5 class="my-0 mr-md-auto font-weight-normal text-light"><a class="text-light" href="/">Poseify</a></h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-light" href="">Home</a>
+            <a class="p-2 text-light" href="{% url 'upload' %}">Upload</a>
+            <a class="p-2 text-light" href="{% url 'shoot' %}">Record</a>
+            <a class="p-2 text-light" href="{% url 'account' %}">My Account</a>
+          </nav>
+          <!-- <a class="btn btn-outline-light" href="/login">Log in</a> -->
+      </div>
+    </div>
+  
+    <main>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h1 class="display-3">Upload file</h1>
+              <p class="lead p-2">
+                With the assistance of our Machine Learning algorithm,
+                we aim to provide a helpful insight into your results
+              </p>
+            </div>
+            <div class="col-md-auto my-auto">
+              <img src="data:image/png;base64,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" height="300" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="container p-4">
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <label for="input_file">Click here to upload your file</label><br/>
+          <input type="file" id="input_file" name="input_file">
+          <p class="py-2">Drag your files here or click in this area.</p>
+          <button id="fullbtn" type="submit" class="btn btn-secondary btn-lg btn-block">Upload</button>
+        </form>
+      </div>
+    </main>
+  
+    <footer class="footer">
+      <div class="container">
+        <p class="float-right">
+          <a style="color: #EC3B83;" href="#">Back to top</a>
+        </p>
+        <p>&copy; 2022 Poseify. All Rights Reserved.</p>
+        <p>New to Bootstrap? <a style="color: #EC3B83;" href="">Visit the homepage</a> or read our <a style="color: #EC3B83;" href="">getting started guide</a>.</p>
+      </div>
+    </footer>
+  </body>
