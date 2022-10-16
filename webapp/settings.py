@@ -93,16 +93,6 @@ DATABASES = {
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
     'default': {
-        # 'ENGINE': ENGINE,
-        # 'NAME': NAME,
-        # 'USER': USER,
-        # 'PASSWORD': PASSWORD,
-        # 'HOST': HOST,
-        # 'PORT': PORT,
-        # 'OPTIONS': {
-        #     'sslmode': SSLMODE,
-        #     'options': OPTIONS,
-        # },
         'ENGINE': ENGINE,
         'NAME': NAME,
         'USER': DB_USERNAME,
