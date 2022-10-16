@@ -47,7 +47,12 @@
               Then, an output will be presented which depicts the pose in a detailed manner and the users can save the poses they like. Click below to get started!
           </p>
         <br>
-          <button id="fullbtn" type="button" class="btn btn-secondary btn-lg btn-block">Record</button>
+          <button id="recordButton" type="button" class="btn btn-secondary btn-lg btn-block">Record</button>
+          <script type="text/javascript">
+            document.getElementById("recordButton").onclick = function () {
+              location.href = "{% url 'shoot' %}";
+            }
+          </script>
         </div>
       </div>
       
