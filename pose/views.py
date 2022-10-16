@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 # from .forms import SignupForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from .sms import *
 # Create your views here.
 
 def home_page(request):
@@ -25,7 +26,15 @@ def login_page(request):
         user = authenticate(request, username=username, password=password)
 
         if user is not None:
+    
             login(request, user)
+            num = request.POST.get('phone')
+            # print(num)
+            # global phoneNum
+            phoneNum = "+1" + str(num)
+            send = SendMsg()
+            send.send_sms(phoneNum)
+            # print(phoneNum)
             return redirect('')
 
         else:
