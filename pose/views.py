@@ -13,3 +13,9 @@ def upload_page(request):
 
 def shoot_page(request):
     return render(request, 'shoot.html')
+
+def login_page(request):
+    return render(request, 'login.html')
+
+def signup_page(request):
+    return render(request, 'signup.html')
