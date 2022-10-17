@@ -1,8 +1,7 @@
 <h2 align="center">Poseify</h3>
-<h4 align="center">Online Education Simplied and Content Creation Automated</h2>
  
   <p align="center">
-    Poseify is a web application that converts your videos into simplified animations through machine learning.
+    Poseify is a web application that simplifies online education and automates content creation by converting your videos into simplified animations through machine learning.
     <br />
     <a href="https://devpost.com/software/poseify">Devpost</a>
     ·
